@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		5BA8D0DF2B9093C80035FA45 /* TransferGoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D0DE2B9093C80035FA45 /* TransferGoAppApp.swift */; };
-		5BA8D0E12B9093C80035FA45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D0E02B9093C80035FA45 /* ContentView.swift */; };
 		5BA8D0E32B9093C90035FA45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BA8D0E22B9093C90035FA45 /* Assets.xcassets */; };
 		5BA8D0E62B9093C90035FA45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BA8D0E52B9093C90035FA45 /* Preview Assets.xcassets */; };
 		5BA8D0F02B9093C90035FA45 /* TransferGoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D0EF2B9093C90035FA45 /* TransferGoAppTests.swift */; };
 		5BA8D0FA2B9093C90035FA45 /* TransferGoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D0F92B9093C90035FA45 /* TransferGoAppUITests.swift */; };
 		5BA8D0FC2B9093C90035FA45 /* TransferGoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D0FB2B9093C90035FA45 /* TransferGoAppUITestsLaunchTests.swift */; };
+		5BA8D10D2B90940D0035FA45 /* ConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D10C2B90940D0035FA45 /* ConverterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		5BA8D0DB2B9093C80035FA45 /* TransferGoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransferGoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BA8D0DE2B9093C80035FA45 /* TransferGoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferGoAppApp.swift; sourceTree = "<group>"; };
-		5BA8D0E02B9093C80035FA45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5BA8D0E22B9093C90035FA45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BA8D0E52B9093C90035FA45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5BA8D0EB2B9093C90035FA45 /* TransferGoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransferGoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +43,7 @@
 		5BA8D0F52B9093C90035FA45 /* TransferGoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransferGoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BA8D0F92B9093C90035FA45 /* TransferGoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferGoAppUITests.swift; sourceTree = "<group>"; };
 		5BA8D0FB2B9093C90035FA45 /* TransferGoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferGoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5BA8D10C2B90940D0035FA45 /* ConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +94,10 @@
 		5BA8D0DD2B9093C80035FA45 /* TransferGoApp */ = {
 			isa = PBXGroup;
 			children = (
+				5BA8D10B2B9093FA0035FA45 /* ViewModel */,
+				5BA8D1092B9093EA0035FA45 /* View */,
+				5BA8D1082B9093E60035FA45 /* Model */,
 				5BA8D0DE2B9093C80035FA45 /* TransferGoAppApp.swift */,
-				5BA8D0E02B9093C80035FA45 /* ContentView.swift */,
 				5BA8D0E22B9093C90035FA45 /* Assets.xcassets */,
 				5BA8D0E42B9093C90035FA45 /* Preview Content */,
 			);
@@ -125,6 +127,28 @@
 				5BA8D0FB2B9093C90035FA45 /* TransferGoAppUITestsLaunchTests.swift */,
 			);
 			path = TransferGoAppUITests;
+			sourceTree = "<group>";
+		};
+		5BA8D1082B9093E60035FA45 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5BA8D1092B9093EA0035FA45 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5BA8D10C2B90940D0035FA45 /* ConverterView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5BA8D10B2B9093FA0035FA45 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BA8D0E12B9093C80035FA45 /* ContentView.swift in Sources */,
+				5BA8D10D2B90940D0035FA45 /* ConverterView.swift in Sources */,
 				5BA8D0DF2B9093C80035FA45 /* TransferGoAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
