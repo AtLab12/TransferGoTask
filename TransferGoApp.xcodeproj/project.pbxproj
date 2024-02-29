@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5BA8D0DF2B9093C80035FA45 /* TransferGoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D0DE2B9093C80035FA45 /* TransferGoAppApp.swift */; };
+		5BA8D0E12B9093C80035FA45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D0E02B9093C80035FA45 /* ContentView.swift */; };
+		5BA8D0E32B9093C90035FA45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BA8D0E22B9093C90035FA45 /* Assets.xcassets */; };
+		5BA8D0E62B9093C90035FA45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BA8D0E52B9093C90035FA45 /* Preview Assets.xcassets */; };
+		5BA8D0F02B9093C90035FA45 /* TransferGoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D0EF2B9093C90035FA45 /* TransferGoAppTests.swift */; };
+		5BA8D0FA2B9093C90035FA45 /* TransferGoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D0F92B9093C90035FA45 /* TransferGoAppUITests.swift */; };
+		5BA8D0FC2B9093C90035FA45 /* TransferGoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D0FB2B9093C90035FA45 /* TransferGoAppUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5BA8D0EC2B9093C90035FA45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BA8D0D32B9093C80035FA45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BA8D0DA2B9093C80035FA45;
+			remoteInfo = TransferGoApp;
+		};
+		5BA8D0F62B9093C90035FA45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BA8D0D32B9093C80035FA45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BA8D0DA2B9093C80035FA45;
+			remoteInfo = TransferGoApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5BA8D0DB2B9093C80035FA45 /* TransferGoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransferGoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BA8D0DE2B9093C80035FA45 /* TransferGoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferGoAppApp.swift; sourceTree = "<group>"; };
+		5BA8D0E02B9093C80035FA45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5BA8D0E22B9093C90035FA45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5BA8D0E52B9093C90035FA45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5BA8D0EB2B9093C90035FA45 /* TransferGoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransferGoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BA8D0EF2B9093C90035FA45 /* TransferGoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferGoAppTests.swift; sourceTree = "<group>"; };
+		5BA8D0F52B9093C90035FA45 /* TransferGoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransferGoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BA8D0F92B9093C90035FA45 /* TransferGoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferGoAppUITests.swift; sourceTree = "<group>"; };
+		5BA8D0FB2B9093C90035FA45 /* TransferGoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferGoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5BA8D0D82B9093C80035FA45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BA8D0E82B9093C90035FA45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BA8D0F22B9093C90035FA45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5BA8D0D22B9093C80035FA45 = {
+			isa = PBXGroup;
+			children = (
+				5BA8D0DD2B9093C80035FA45 /* TransferGoApp */,
+				5BA8D0EE2B9093C90035FA45 /* TransferGoAppTests */,
+				5BA8D0F82B9093C90035FA45 /* TransferGoAppUITests */,
+				5BA8D0DC2B9093C80035FA45 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5BA8D0DC2B9093C80035FA45 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5BA8D0DB2B9093C80035FA45 /* TransferGoApp.app */,
+				5BA8D0EB2B9093C90035FA45 /* TransferGoAppTests.xctest */,
+				5BA8D0F52B9093C90035FA45 /* TransferGoAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5BA8D0DD2B9093C80035FA45 /* TransferGoApp */ = {
+			isa = PBXGroup;
+			children = (
+				5BA8D0DE2B9093C80035FA45 /* TransferGoAppApp.swift */,
+				5BA8D0E02B9093C80035FA45 /* ContentView.swift */,
+				5BA8D0E22B9093C90035FA45 /* Assets.xcassets */,
+				5BA8D0E42B9093C90035FA45 /* Preview Content */,
+			);
+			path = TransferGoApp;
+			sourceTree = "<group>";
+		};
+		5BA8D0E42B9093C90035FA45 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5BA8D0E52B9093C90035FA45 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5BA8D0EE2B9093C90035FA45 /* TransferGoAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				5BA8D0EF2B9093C90035FA45 /* TransferGoAppTests.swift */,
+			);
+			path = TransferGoAppTests;
+			sourceTree = "<group>";
+		};
+		5BA8D0F82B9093C90035FA45 /* TransferGoAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5BA8D0F92B9093C90035FA45 /* TransferGoAppUITests.swift */,
+				5BA8D0FB2B9093C90035FA45 /* TransferGoAppUITestsLaunchTests.swift */,
+			);
+			path = TransferGoAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5BA8D0DA2B9093C80035FA45 /* TransferGoApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BA8D0FF2B9093C90035FA45 /* Build configuration list for PBXNativeTarget "TransferGoApp" */;
+			buildPhases = (
+				5BA8D0D72B9093C80035FA45 /* Sources */,
+				5BA8D0D82B9093C80035FA45 /* Frameworks */,
+				5BA8D0D92B9093C80035FA45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TransferGoApp;
+			productName = TransferGoApp;
+			productReference = 5BA8D0DB2B9093C80035FA45 /* TransferGoApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5BA8D0EA2B9093C90035FA45 /* TransferGoAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BA8D1022B9093C90035FA45 /* Build configuration list for PBXNativeTarget "TransferGoAppTests" */;
+			buildPhases = (
+				5BA8D0E72B9093C90035FA45 /* Sources */,
+				5BA8D0E82B9093C90035FA45 /* Frameworks */,
+				5BA8D0E92B9093C90035FA45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BA8D0ED2B9093C90035FA45 /* PBXTargetDependency */,
+			);
+			name = TransferGoAppTests;
+			productName = TransferGoAppTests;
+			productReference = 5BA8D0EB2B9093C90035FA45 /* TransferGoAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5BA8D0F42B9093C90035FA45 /* TransferGoAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BA8D1052B9093C90035FA45 /* Build configuration list for PBXNativeTarget "TransferGoAppUITests" */;
+			buildPhases = (
+				5BA8D0F12B9093C90035FA45 /* Sources */,
+				5BA8D0F22B9093C90035FA45 /* Frameworks */,
+				5BA8D0F32B9093C90035FA45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BA8D0F72B9093C90035FA45 /* PBXTargetDependency */,
+			);
+			name = TransferGoAppUITests;
+			productName = TransferGoAppUITests;
+			productReference = 5BA8D0F52B9093C90035FA45 /* TransferGoAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5BA8D0D32B9093C80035FA45 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					5BA8D0DA2B9093C80035FA45 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					5BA8D0EA2B9093C90035FA45 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 5BA8D0DA2B9093C80035FA45;
+					};
+					5BA8D0F42B9093C90035FA45 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 5BA8D0DA2B9093C80035FA45;
+					};
+				};
+			};
+			buildConfigurationList = 5BA8D0D62B9093C80035FA45 /* Build configuration list for PBXProject "TransferGoApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5BA8D0D22B9093C80035FA45;
+			productRefGroup = 5BA8D0DC2B9093C80035FA45 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5BA8D0DA2B9093C80035FA45 /* TransferGoApp */,
+				5BA8D0EA2B9093C90035FA45 /* TransferGoAppTests */,
+				5BA8D0F42B9093C90035FA45 /* TransferGoAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5BA8D0D92B9093C80035FA45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BA8D0E62B9093C90035FA45 /* Preview Assets.xcassets in Resources */,
+				5BA8D0E32B9093C90035FA45 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BA8D0E92B9093C90035FA45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BA8D0F32B9093C90035FA45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5BA8D0D72B9093C80035FA45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BA8D0E12B9093C80035FA45 /* ContentView.swift in Sources */,
+				5BA8D0DF2B9093C80035FA45 /* TransferGoAppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BA8D0E72B9093C90035FA45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BA8D0F02B9093C90035FA45 /* TransferGoAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BA8D0F12B9093C90035FA45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BA8D0FA2B9093C90035FA45 /* TransferGoAppUITests.swift in Sources */,
+				5BA8D0FC2B9093C90035FA45 /* TransferGoAppUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5BA8D0ED2B9093C90035FA45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BA8D0DA2B9093C80035FA45 /* TransferGoApp */;
+			targetProxy = 5BA8D0EC2B9093C90035FA45 /* PBXContainerItemProxy */;
+		};
+		5BA8D0F72B9093C90035FA45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BA8D0DA2B9093C80035FA45 /* TransferGoApp */;
+			targetProxy = 5BA8D0F62B9093C90035FA45 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5BA8D0FD2B9093C90035FA45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5BA8D0FE2B9093C90035FA45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5BA8D1002B9093C90035FA45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TransferGoApp/Preview Content\"";
+				DEVELOPMENT_TEAM = FBLS5HS6W7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = baltA.TransferGoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5BA8D1012B9093C90035FA45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TransferGoApp/Preview Content\"";
+				DEVELOPMENT_TEAM = FBLS5HS6W7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = baltA.TransferGoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5BA8D1032B9093C90035FA45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FBLS5HS6W7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = baltA.TransferGoAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TransferGoApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TransferGoApp";
+			};
+			name = Debug;
+		};
+		5BA8D1042B9093C90035FA45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FBLS5HS6W7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = baltA.TransferGoAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TransferGoApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TransferGoApp";
+			};
+			name = Release;
+		};
+		5BA8D1062B9093C90035FA45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FBLS5HS6W7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = baltA.TransferGoAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TransferGoApp;
+			};
+			name = Debug;
+		};
+		5BA8D1072B9093C90035FA45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FBLS5HS6W7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = baltA.TransferGoAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TransferGoApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5BA8D0D62B9093C80035FA45 /* Build configuration list for PBXProject "TransferGoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BA8D0FD2B9093C90035FA45 /* Debug */,
+				5BA8D0FE2B9093C90035FA45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BA8D0FF2B9093C90035FA45 /* Build configuration list for PBXNativeTarget "TransferGoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BA8D1002B9093C90035FA45 /* Debug */,
+				5BA8D1012B9093C90035FA45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BA8D1022B9093C90035FA45 /* Build configuration list for PBXNativeTarget "TransferGoAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BA8D1032B9093C90035FA45 /* Debug */,
+				5BA8D1042B9093C90035FA45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BA8D1052B9093C90035FA45 /* Build configuration list for PBXNativeTarget "TransferGoAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BA8D1062B9093C90035FA45 /* Debug */,
+				5BA8D1072B9093C90035FA45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5BA8D0D32B9093C80035FA45 /* Project object */;
+}
