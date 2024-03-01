@@ -14,6 +14,13 @@
 		5BA8D0FA2B9093C90035FA45 /* TransferGoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D0F92B9093C90035FA45 /* TransferGoAppUITests.swift */; };
 		5BA8D0FC2B9093C90035FA45 /* TransferGoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D0FB2B9093C90035FA45 /* TransferGoAppUITestsLaunchTests.swift */; };
 		5BA8D10D2B90940D0035FA45 /* ConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D10C2B90940D0035FA45 /* ConverterView.swift */; };
+		5BA8D1122B9216A80035FA45 /* InputCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D1112B9216A80035FA45 /* InputCellView.swift */; };
+		5BA8D1142B9217410035FA45 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D1132B9217410035FA45 /* Currency.swift */; };
+		5BA8D11A2B92191B0035FA45 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D1192B92191B0035FA45 /* ApiClient.swift */; };
+		5BA8D11C2B921B470035FA45 /* CellDirectionIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D11B2B921B470035FA45 /* CellDirectionIdentifier.swift */; };
+		5BA8D1212B9221DF0035FA45 /* ConverterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D1202B9221DF0035FA45 /* ConverterViewModel.swift */; };
+		5BA8D1232B922AE70035FA45 /* CurrencyChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D1222B922AE70035FA45 /* CurrencyChangeView.swift */; };
+		5BA8D1252B922AF20035FA45 /* CurrencyChangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D1242B922AF20035FA45 /* CurrencyChangeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +51,13 @@
 		5BA8D0F92B9093C90035FA45 /* TransferGoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferGoAppUITests.swift; sourceTree = "<group>"; };
 		5BA8D0FB2B9093C90035FA45 /* TransferGoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferGoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5BA8D10C2B90940D0035FA45 /* ConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterView.swift; sourceTree = "<group>"; };
+		5BA8D1112B9216A80035FA45 /* InputCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCellView.swift; sourceTree = "<group>"; };
+		5BA8D1132B9217410035FA45 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		5BA8D1192B92191B0035FA45 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		5BA8D11B2B921B470035FA45 /* CellDirectionIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDirectionIdentifier.swift; sourceTree = "<group>"; };
+		5BA8D1202B9221DF0035FA45 /* ConverterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewModel.swift; sourceTree = "<group>"; };
+		5BA8D1222B922AE70035FA45 /* CurrencyChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyChangeView.swift; sourceTree = "<group>"; };
+		5BA8D1242B922AF20035FA45 /* CurrencyChangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyChangeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +108,7 @@
 		5BA8D0DD2B9093C80035FA45 /* TransferGoApp */ = {
 			isa = PBXGroup;
 			children = (
+				5BA8D1152B9218D40035FA45 /* Services */,
 				5BA8D10B2B9093FA0035FA45 /* ViewModel */,
 				5BA8D1092B9093EA0035FA45 /* View */,
 				5BA8D1082B9093E60035FA45 /* Model */,
@@ -132,6 +147,8 @@
 		5BA8D1082B9093E60035FA45 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5BA8D1132B9217410035FA45 /* Currency.swift */,
+				5BA8D11B2B921B470035FA45 /* CellDirectionIdentifier.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -140,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				5BA8D10C2B90940D0035FA45 /* ConverterView.swift */,
+				5BA8D1112B9216A80035FA45 /* InputCellView.swift */,
+				5BA8D1222B922AE70035FA45 /* CurrencyChangeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -147,8 +166,34 @@
 		5BA8D10B2B9093FA0035FA45 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				5BA8D1202B9221DF0035FA45 /* ConverterViewModel.swift */,
+				5BA8D1242B922AF20035FA45 /* CurrencyChangeViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5BA8D1152B9218D40035FA45 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5BA8D1182B92190B0035FA45 /* Network */,
+				5BA8D1162B9218D90035FA45 /* Storage */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5BA8D1162B9218D90035FA45 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		5BA8D1182B92190B0035FA45 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5BA8D1192B92191B0035FA45 /* ApiClient.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,7 +327,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BA8D10D2B90940D0035FA45 /* ConverterView.swift in Sources */,
+				5BA8D1142B9217410035FA45 /* Currency.swift in Sources */,
+				5BA8D1122B9216A80035FA45 /* InputCellView.swift in Sources */,
+				5BA8D1252B922AF20035FA45 /* CurrencyChangeViewModel.swift in Sources */,
 				5BA8D0DF2B9093C80035FA45 /* TransferGoAppApp.swift in Sources */,
+				5BA8D1212B9221DF0035FA45 /* ConverterViewModel.swift in Sources */,
+				5BA8D11C2B921B470035FA45 /* CellDirectionIdentifier.swift in Sources */,
+				5BA8D11A2B92191B0035FA45 /* ApiClient.swift in Sources */,
+				5BA8D1232B922AE70035FA45 /* CurrencyChangeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
