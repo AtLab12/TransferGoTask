@@ -18,6 +18,7 @@ struct ConverterView: View {
         static let cellContentHorizntalPadding = 12.0
         static let cellContentVerticalPadding = 17.0
         static let cornerRadius: CGFloat = 20
+        static let swapButtonSize = 24.0
     }
     
     @Bindable var viewModel = ConverterViewModel()
@@ -44,7 +45,21 @@ struct ConverterView: View {
                 .padding(.horizontal, Constants.cellContentHorizntalPadding)
                 .padding(.vertical, Constants.cellContentVerticalPadding)
                 
-                
+                Button {
+                    withAnimation {
+                        viewModel.swapCurrencies()
+                    }
+                } label: {
+                    Circle()
+                        .foregroundStyle(Color.blue)
+                        .frame(width: Constants.swapButtonSize)
+                        .overlay {
+                            Image(systemName: "arrow.up.arrow.down")
+                                .font(.system(size: 12, weight: .bold))
+                                .foregroundStyle(Color.white)
+                        }
+                }
+                .offset(x: -Constants.fieldWidth * 0.33, y: Constants.fieldHeight/2 - Constants.swapButtonSize/2)
             }
             .frame(width: Constants.fieldWidth, height: Constants.fieldHeight)
             .padding(.top, Constants.fieldTopPadding)

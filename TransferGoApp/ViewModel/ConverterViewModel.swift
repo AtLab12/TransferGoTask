@@ -22,4 +22,8 @@ final class ConverterViewModel {
         self.toAmount = "0.0"
         self.toCurrency = .init(acronym: "UAH", flag: UIImage(resource: .uaImg), id: UUID(), sendingLimit: 50000, country: "Ukraine", fullName: "Hrivna")
     }
+    
+    func swapCurrencies() {
+        (fromCurrency, fromAmount, toCurrency, toAmount) = (toCurrency, toAmount, fromCurrency, fromAmount)
+    }
 }
