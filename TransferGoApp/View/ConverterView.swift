@@ -19,6 +19,10 @@ struct ConverterView: View {
         static let cellContentVerticalPadding = 17.0
         static let cornerRadius: CGFloat = 20
         static let swapButtonSize = 24.0
+        static let swapButtonFontSize = 12.0
+        static let rateVerticalPadding = 4.0
+        static let rateHorizontalPadding = 6.0
+        static let rateTextSize = 12.0
     }
     
     @Bindable var viewModel = ConverterViewModel()
@@ -26,14 +30,18 @@ struct ConverterView: View {
     
     var body: some View {
         VStack {
-            ZStack(alignment: .top) {
+            ZStack{
                 RoundedRectangle(cornerRadius: Constants.cornerRadius)
                     .foregroundStyle(Color.backgroundGray)
                 
-                RoundedRectangle(cornerRadius: Constants.cornerRadius)
-                    .frame(height: Constants.fieldHeight/2)
-                    .foregroundStyle(Color.white)
-                    .shadow(color: Color.shadow, radius: 5)
+                VStack {
+                    RoundedRectangle(cornerRadius: Constants.cornerRadius)
+                        .frame(height: Constants.fieldHeight/2)
+                        .foregroundStyle(Color.white)
+                        .shadow(color: Color.shadow, radius: 5)
+                    
+                    Spacer()
+                }
                 
                 VStack {
                     InputCellView(directionIdentifier: .from, selectedCurrency: $viewModel.fromCurrency, amount: $viewModel.fromAmount, currencyChangeViewModel: $currencyChangeViewModel)
@@ -55,11 +63,21 @@ struct ConverterView: View {
                         .frame(width: Constants.swapButtonSize)
                         .overlay {
                             Image(systemName: "arrow.up.arrow.down")
-                                .font(.system(size: 12, weight: .bold))
+                                .font(.system(size: Constants.swapButtonFontSize, weight: .bold))
                                 .foregroundStyle(Color.white)
                         }
                 }
-                .offset(x: -Constants.fieldWidth * 0.33, y: Constants.fieldHeight/2 - Constants.swapButtonSize/2)
+                .offset(x: -Constants.fieldWidth * 0.33)
+                
+                Text(viewModel.rateLabel)
+                    .font(.system(size: Constants.rateTextSize, weight: .semibold))
+                    .foregroundStyle(Color.white)
+                    .padding(.vertical, Constants.rateVerticalPadding)
+                    .padding(.horizontal, Constants.rateHorizontalPadding)
+                    .background {
+                        Capsule()
+                            .foregroundStyle(Color.black)
+                    }
             }
             .frame(width: Constants.fieldWidth, height: Constants.fieldHeight)
             .padding(.top, Constants.fieldTopPadding)
@@ -72,6 +90,12 @@ struct ConverterView: View {
                 selectedCurrency: $0.directionIdentifier == .from ? $viewModel.fromCurrency : $viewModel.toCurrency,
                 title: $0.directionIdentifier == .from ? "Sending from" : "Receiver gets"
             )
+        }
+        .task {
+            viewModel.updateRate()
+        }
+        .onChange(of: viewModel.fromAmount) {
+            viewModel.updateRate()
         }
     }
 }

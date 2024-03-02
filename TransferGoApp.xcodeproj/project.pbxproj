@@ -25,6 +25,7 @@
 		5BA8D12A2B93334A0035FA45 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D1292B93334A0035FA45 /* SearchView.swift */; };
 		5BA8D12D2B93A8330035FA45 /* String+Levenstein.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D12C2B93A8330035FA45 /* String+Levenstein.swift */; };
 		5BA8D12F2B93A8FE0035FA45 /* SearchBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D12E2B93A8FE0035FA45 /* SearchBase.swift */; };
+		5BA8D1312B93B5030035FA45 /* RateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D1302B93B5030035FA45 /* RateResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		5BA8D1292B93334A0035FA45 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		5BA8D12C2B93A8330035FA45 /* String+Levenstein.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Levenstein.swift"; sourceTree = "<group>"; };
 		5BA8D12E2B93A8FE0035FA45 /* SearchBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBase.swift; sourceTree = "<group>"; };
+		5BA8D1302B93B5030035FA45 /* RateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 			children = (
 				5BA8D1132B9217410035FA45 /* Currency.swift */,
 				5BA8D11B2B921B470035FA45 /* CellDirectionIdentifier.swift */,
+				5BA8D1302B93B5030035FA45 /* RateResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,16 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				5BA8D1182B92190B0035FA45 /* Network */,
-				5BA8D1162B9218D90035FA45 /* Storage */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		5BA8D1162B9218D90035FA45 /* Storage */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Storage;
 			sourceTree = "<group>";
 		};
 		5BA8D1182B92190B0035FA45 /* Network */ = {
@@ -366,6 +361,7 @@
 				5BA8D12F2B93A8FE0035FA45 /* SearchBase.swift in Sources */,
 				5BA8D12D2B93A8330035FA45 /* String+Levenstein.swift in Sources */,
 				5BA8D1232B922AE70035FA45 /* CurrencyChangeView.swift in Sources */,
+				5BA8D1312B93B5030035FA45 /* RateResponse.swift in Sources */,
 				5BA8D12A2B93334A0035FA45 /* SearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
