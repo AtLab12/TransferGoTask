@@ -12,6 +12,7 @@ struct TransferGoAppApp: App {
     var body: some Scene {
         WindowGroup {
             ConverterView()
+                .preferredColorScheme(.light)
         }
     }
 }

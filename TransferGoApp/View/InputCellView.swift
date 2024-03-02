@@ -17,12 +17,22 @@ struct InputCellView: View {
     }
     
     let directionIdentifier: CellDirectionIdentifier
+    
     private var textColor: Color {
         switch directionIdentifier {
         case .from:
             return Color.blue
         case .to:
             return Color.black
+        }
+    }
+    
+    private var fieldTitle: String {
+        switch directionIdentifier {
+        case .from:
+            return "Sending from"
+        case .to:
+            return "Receiver gets"
         }
     }
     
@@ -34,12 +44,12 @@ struct InputCellView: View {
         HStack(spacing: Constants.stackSpacing) {
             
             VStack(alignment: .leading, spacing: Constants.flagStackSpacing) {
-                Text("Sending from")
+                Text(fieldTitle)
                     .foregroundStyle(Color.textGray)
                     .fontWeight(.light)
                 
                 Button {
-                    currencyChangeViewModel = .init(directionIdentifier: directionIdentifier, currency: selectedCurrency)
+                    currencyChangeViewModel = .init(directionIdentifier: directionIdentifier)
                 } label: {
                     HStack(spacing: Constants.flagStackSpacing) {
                         Image(uiImage: selectedCurrency.flag)
@@ -68,8 +78,7 @@ struct InputCellView: View {
 #Preview {
     InputCellView(
         directionIdentifier: .from,
-        selectedCurrency: .constant(
-        .init(acronym: "PLN", flag: UIImage(resource: .plImg), id: UUID(), sendingLimit: 20000)),
+        selectedCurrency: .constant(.mock),
         amount: .constant("100.00"),
         currencyChangeViewModel: .constant(.mock)
     )

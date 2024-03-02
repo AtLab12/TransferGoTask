@@ -13,12 +13,21 @@ struct Currency: Identifiable, Equatable {
     let flag: UIImage
     let id: UUID
     let sendingLimit: Int
+    let country: String
+    let fullName: String
 }
 
 #if DEBUG
 
 extension Currency {
-    static let mock: Self = .init(acronym: "UAH", flag: UIImage(resource: .uaImg), id: UUID(), sendingLimit: 50000)
+    static let mock: Self = .init(
+        acronym: "UAH",
+        flag: UIImage(resource: .uaImg),
+        id: UUID(),
+        sendingLimit: 50000,
+        country: "Ukraine",
+        fullName: "Hrivna"
+    )
 }
 
 #endif

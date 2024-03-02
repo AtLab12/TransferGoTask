@@ -10,23 +10,36 @@ import Foundation
 @Observable
 final class CurrencyChangeViewModel: Identifiable {
     let directionIdentifier: CellDirectionIdentifier
-    let currency: Currency
     let id: UUID
+    var availableCurrencies: [Currency] = []
+    var searchResult: [Currency] = []
+    let searchBase: SearchBase
     
-    init(directionIdentifier: CellDirectionIdentifier, currency: Currency) {
+    init(directionIdentifier: CellDirectionIdentifier) {
         self.directionIdentifier = directionIdentifier
-        self.currency = currency
-        self.id = currency.id
+        self.id = UUID()
+        self.searchBase = SearchBase()
+    }
+    
+    func fetchCurrencies() {
+        availableCurrencies = ApiClient.shared.getAvailableCurrencies()
+        searchBase.updateSearchBase(currencies: availableCurrencies)
+    }
+    
+    func performSearch(phrase: String) {
+        if phrase.isEmpty {
+            searchResult = []
+        } else {
+            let foundIds = searchBase.search(phrase: phrase)
+            searchResult = availableCurrencies.filter { foundIds.contains($0.id) }
+        }
     }
 }
 
 #if DEBUG
 
 extension CurrencyChangeViewModel {
-    static let mock: CurrencyChangeViewModel = .init(
-        directionIdentifier: .from,
-        currency: .mock
-    )
+    static let mock: CurrencyChangeViewModel = .init(directionIdentifier: .from)
 }
 
 #endif

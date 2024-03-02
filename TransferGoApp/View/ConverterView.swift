@@ -52,7 +52,11 @@ struct ConverterView: View {
             Spacer()
         }
         .sheet(item: $currencyChangeViewModel) {
-            CurrencyConverterView(viewModel: $0)
+            CurrencyConverterView(
+                viewModel: $0,
+                selectedCurrency: $0.directionIdentifier == .from ? $viewModel.fromCurrency : $viewModel.toCurrency,
+                title: $0.directionIdentifier == .from ? "Sending from" : "Receiver gets"
+            )
         }
     }
 }
