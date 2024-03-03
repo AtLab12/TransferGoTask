@@ -39,16 +39,43 @@ struct ConverterView: View {
                         .frame(height: Constants.fieldHeight/2)
                         .foregroundStyle(Color.white)
                         .shadow(color: Color.shadow, radius: 5)
+                        .overlay {
+                            if viewModel.amountError != nil {
+                                RoundedRectangle(cornerRadius: Constants.cornerRadius)
+                                    .stroke(lineWidth: 2)
+                                    .foregroundStyle(Color.red)
+                            }
+                        }
                     
                     Spacer()
                 }
                 
+                if let amountError = viewModel.amountError {
+                    VStack {
+                        
+                        Spacer()
+                        
+                        AmountAlert(alert: amountError)
+                            .offset(y: 40)
+                    }
+                }
+                
                 VStack {
-                    InputCellView(directionIdentifier: .from, selectedCurrency: $viewModel.fromCurrency, amount: $viewModel.fromAmount, currencyChangeViewModel: $currencyChangeViewModel)
+                    InputCellView(
+                        directionIdentifier: .from,
+                        selectedCurrency: $viewModel.fromCurrency,
+                        amount: $viewModel.fromAmount,
+                        currencyChangeViewModel: $currencyChangeViewModel
+                    )
                     
                     Spacer()
                     
-                    InputCellView(directionIdentifier: .to, selectedCurrency: $viewModel.toCurrency, amount: $viewModel.toAmount, currencyChangeViewModel: $currencyChangeViewModel)
+                    InputCellView(
+                        directionIdentifier: .to,
+                        selectedCurrency: $viewModel.toCurrency,
+                        amount: $viewModel.toAmount,
+                        currencyChangeViewModel: $currencyChangeViewModel
+                    )
                 }
                 .padding(.horizontal, Constants.cellContentHorizntalPadding)
                 .padding(.vertical, Constants.cellContentVerticalPadding)

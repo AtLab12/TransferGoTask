@@ -26,6 +26,8 @@
 		5BA8D12D2B93A8330035FA45 /* String+Levenstein.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D12C2B93A8330035FA45 /* String+Levenstein.swift */; };
 		5BA8D12F2B93A8FE0035FA45 /* SearchBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D12E2B93A8FE0035FA45 /* SearchBase.swift */; };
 		5BA8D1312B93B5030035FA45 /* RateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D1302B93B5030035FA45 /* RateResponse.swift */; };
+		5BA8D1332B94A69D0035FA45 /* ConverterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D1322B94A69D0035FA45 /* ConverterError.swift */; };
+		5BA8D1352B94B57E0035FA45 /* AmountAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D1342B94B57E0035FA45 /* AmountAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		5BA8D12C2B93A8330035FA45 /* String+Levenstein.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Levenstein.swift"; sourceTree = "<group>"; };
 		5BA8D12E2B93A8FE0035FA45 /* SearchBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBase.swift; sourceTree = "<group>"; };
 		5BA8D1302B93B5030035FA45 /* RateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateResponse.swift; sourceTree = "<group>"; };
+		5BA8D1322B94A69D0035FA45 /* ConverterError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterError.swift; sourceTree = "<group>"; };
+		5BA8D1342B94B57E0035FA45 /* AmountAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,7 @@
 				5BA8D1132B9217410035FA45 /* Currency.swift */,
 				5BA8D11B2B921B470035FA45 /* CellDirectionIdentifier.swift */,
 				5BA8D1302B93B5030035FA45 /* RateResponse.swift */,
+				5BA8D1322B94A69D0035FA45 /* ConverterError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 				5BA8D1262B932D500035FA45 /* CurrencyChange */,
 				5BA8D10C2B90940D0035FA45 /* ConverterView.swift */,
 				5BA8D1112B9216A80035FA45 /* InputCellView.swift */,
+				5BA8D1342B94B57E0035FA45 /* AmountAlert.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -353,9 +359,11 @@
 				5BA8D1142B9217410035FA45 /* Currency.swift in Sources */,
 				5BA8D1122B9216A80035FA45 /* InputCellView.swift in Sources */,
 				5BA8D1252B922AF20035FA45 /* CurrencyChangeViewModel.swift in Sources */,
+				5BA8D1332B94A69D0035FA45 /* ConverterError.swift in Sources */,
 				5BA8D1282B932D6C0035FA45 /* CurrencySelectorView.swift in Sources */,
 				5BA8D0DF2B9093C80035FA45 /* TransferGoAppApp.swift in Sources */,
 				5BA8D1212B9221DF0035FA45 /* ConverterViewModel.swift in Sources */,
+				5BA8D1352B94B57E0035FA45 /* AmountAlert.swift in Sources */,
 				5BA8D11C2B921B470035FA45 /* CellDirectionIdentifier.swift in Sources */,
 				5BA8D11A2B92191B0035FA45 /* ApiClient.swift in Sources */,
 				5BA8D12F2B93A8FE0035FA45 /* SearchBase.swift in Sources */,

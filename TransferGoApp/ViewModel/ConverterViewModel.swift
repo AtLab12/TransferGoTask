@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Combine
+import SwiftUI
 
 final class ConverterViewModel: ObservableObject {
     
@@ -18,7 +19,9 @@ final class ConverterViewModel: ObservableObject {
     @Published var toCurrency: Currency
     
     @Published public private(set) var rate: Double = 0.0
-    @Published public private(set) var error: Error?
+    
+    @Published public private(set) var error: ConverterError?
+    @Published public private(set) var amountError: ConverterError?
     
     private var lastCheck = ("0.0", "0.0")
     
@@ -33,6 +36,27 @@ final class ConverterViewModel: ObservableObject {
         self.toCurrency = .init(acronym: "UAH", flag: UIImage(resource: .uaImg), id: UUID(), sendingLimit: 50000, country: "Ukraine", fullName: "Hrivna")
         
         $fromAmount
+            .flatMap { [weak self] (amountString) -> AnyPublisher<String, Never> in
+                guard let amount = Double(amountString), let limit = self?.fromCurrency.sendingLimit else {
+                    return Empty<String, Never>(completeImmediately: false).eraseToAnyPublisher()
+                }
+                
+                if amount > Double(limit) {
+                    DispatchQueue.main.async {
+                        withAnimation {
+                            self?.amountError = .init(title: "Maximum sending amount: \(limit) " + (self?.fromCurrency.acronym ?? ""), subtitle: "")
+                        }
+                    }
+                    return Empty<String, Never>(completeImmediately: false).eraseToAnyPublisher()
+                } else {
+                    DispatchQueue.main.async {
+                        withAnimation {
+                            self?.amountError = nil
+                        }
+                    }
+                    return Just(amountString).eraseToAnyPublisher()
+                }
+            }
             .debounce(for: .seconds(0.75), scheduler: RunLoop.main)
             .removeDuplicates()
             .sink { [weak self] _ in
@@ -53,10 +77,11 @@ final class ConverterViewModel: ObservableObject {
         (fromCurrency, fromAmount, toCurrency, toAmount) = (toCurrency, toAmount, fromCurrency, String(0.0))
         rate = 0.0
         updateRate()
+        amountError = nil
     }
     
     func updateRate(initiatedBy: CellDirectionIdentifier = .from) {
-        if (fromAmount, toAmount) != lastCheck {
+        if (fromAmount, toAmount) != lastCheck && (amountError == nil || initiatedBy == .to) {
             ApiClient.shared.getRateCurrencies(
                 from: initiatedBy == .from ? fromCurrency : toCurrency,
                 to: initiatedBy == .from ? toCurrency : fromCurrency,
@@ -66,8 +91,8 @@ final class ConverterViewModel: ObservableObject {
                 switch completion {
                 case .finished:
                     break
-                case .failure(let error):
-                    self.error = error
+                case .failure:
+                    self.error = .init(title: "Convertion error", subtitle: "App failed to convert amount")
                 }
             } receiveValue: { response in
                 DispatchQueue.main.async {
