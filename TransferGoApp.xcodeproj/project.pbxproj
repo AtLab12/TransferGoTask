@@ -10,7 +10,6 @@
 		5BA8D0DF2B9093C80035FA45 /* TransferGoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D0DE2B9093C80035FA45 /* TransferGoAppApp.swift */; };
 		5BA8D0E32B9093C90035FA45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BA8D0E22B9093C90035FA45 /* Assets.xcassets */; };
 		5BA8D0E62B9093C90035FA45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BA8D0E52B9093C90035FA45 /* Preview Assets.xcassets */; };
-		5BA8D0F02B9093C90035FA45 /* TransferGoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D0EF2B9093C90035FA45 /* TransferGoAppTests.swift */; };
 		5BA8D0FA2B9093C90035FA45 /* TransferGoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D0F92B9093C90035FA45 /* TransferGoAppUITests.swift */; };
 		5BA8D0FC2B9093C90035FA45 /* TransferGoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D0FB2B9093C90035FA45 /* TransferGoAppUITestsLaunchTests.swift */; };
 		5BA8D10D2B90940D0035FA45 /* ConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D10C2B90940D0035FA45 /* ConverterView.swift */; };
@@ -30,6 +29,10 @@
 		5BA8D1352B94B57E0035FA45 /* AmountAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D1342B94B57E0035FA45 /* AmountAlert.swift */; };
 		5BA8D1372B94DC9B0035FA45 /* TopError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D1362B94DC9B0035FA45 /* TopError.swift */; };
 		5BA8D1392B94E1A60035FA45 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D1382B94E1A60035FA45 /* NetworkMonitor.swift */; };
+		5BA8D13B2B94EBF70035FA45 /* SearchBaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D13A2B94EBF70035FA45 /* SearchBaseTests.swift */; };
+		5BA8D13D2B94EEBF0035FA45 /* ConverterViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D13C2B94EEBF0035FA45 /* ConverterViewModelTests.swift */; };
+		5BA8D13F2B94FEE80035FA45 /* URLSessionNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D13E2B94FEE80035FA45 /* URLSessionNetworkingService.swift */; };
+		5BA8D1412B94FEFB0035FA45 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D1402B94FEFB0035FA45 /* NetworkingService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +58,6 @@
 		5BA8D0E22B9093C90035FA45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BA8D0E52B9093C90035FA45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5BA8D0EB2B9093C90035FA45 /* TransferGoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransferGoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BA8D0EF2B9093C90035FA45 /* TransferGoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferGoAppTests.swift; sourceTree = "<group>"; };
 		5BA8D0F52B9093C90035FA45 /* TransferGoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransferGoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BA8D0F92B9093C90035FA45 /* TransferGoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferGoAppUITests.swift; sourceTree = "<group>"; };
 		5BA8D0FB2B9093C90035FA45 /* TransferGoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferGoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -76,6 +78,10 @@
 		5BA8D1342B94B57E0035FA45 /* AmountAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountAlert.swift; sourceTree = "<group>"; };
 		5BA8D1362B94DC9B0035FA45 /* TopError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopError.swift; sourceTree = "<group>"; };
 		5BA8D1382B94E1A60035FA45 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		5BA8D13A2B94EBF70035FA45 /* SearchBaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBaseTests.swift; sourceTree = "<group>"; };
+		5BA8D13C2B94EEBF0035FA45 /* ConverterViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewModelTests.swift; sourceTree = "<group>"; };
+		5BA8D13E2B94FEE80035FA45 /* URLSessionNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionNetworkingService.swift; sourceTree = "<group>"; };
+		5BA8D1402B94FEFB0035FA45 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +155,8 @@
 		5BA8D0EE2B9093C90035FA45 /* TransferGoAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				5BA8D0EF2B9093C90035FA45 /* TransferGoAppTests.swift */,
+				5BA8D13A2B94EBF70035FA45 /* SearchBaseTests.swift */,
+				5BA8D13C2B94EEBF0035FA45 /* ConverterViewModelTests.swift */,
 			);
 			path = TransferGoAppTests;
 			sourceTree = "<group>";
@@ -207,6 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				5BA8D1192B92191B0035FA45 /* ApiClient.swift */,
+				5BA8D13E2B94FEE80035FA45 /* URLSessionNetworkingService.swift */,
+				5BA8D1402B94FEFB0035FA45 /* NetworkingService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -365,6 +374,7 @@
 				5BA8D1142B9217410035FA45 /* Currency.swift in Sources */,
 				5BA8D1122B9216A80035FA45 /* InputCellView.swift in Sources */,
 				5BA8D1252B922AF20035FA45 /* CurrencyChangeViewModel.swift in Sources */,
+				5BA8D13F2B94FEE80035FA45 /* URLSessionNetworkingService.swift in Sources */,
 				5BA8D1332B94A69D0035FA45 /* ConverterError.swift in Sources */,
 				5BA8D1282B932D6C0035FA45 /* CurrencySelectorView.swift in Sources */,
 				5BA8D0DF2B9093C80035FA45 /* TransferGoAppApp.swift in Sources */,
@@ -375,6 +385,7 @@
 				5BA8D11C2B921B470035FA45 /* CellDirectionIdentifier.swift in Sources */,
 				5BA8D11A2B92191B0035FA45 /* ApiClient.swift in Sources */,
 				5BA8D12F2B93A8FE0035FA45 /* SearchBase.swift in Sources */,
+				5BA8D1412B94FEFB0035FA45 /* NetworkingService.swift in Sources */,
 				5BA8D12D2B93A8330035FA45 /* String+Levenstein.swift in Sources */,
 				5BA8D1232B922AE70035FA45 /* CurrencyChangeView.swift in Sources */,
 				5BA8D1312B93B5030035FA45 /* RateResponse.swift in Sources */,
@@ -386,7 +397,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BA8D0F02B9093C90035FA45 /* TransferGoAppTests.swift in Sources */,
+				5BA8D13B2B94EBF70035FA45 /* SearchBaseTests.swift in Sources */,
+				5BA8D13D2B94EEBF0035FA45 /* ConverterViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

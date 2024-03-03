@@ -22,7 +22,7 @@ final class CurrencyChangeViewModel: Identifiable {
     }
     
     func fetchCurrencies() {
-        availableCurrencies = ApiClient.shared.getAvailableCurrencies()
+        availableCurrencies = ApiClient().getAvailableCurrencies()
         searchBase.updateSearchBase(currencies: availableCurrencies)
     }
     

@@ -11,9 +11,11 @@ import Combine
 
 final class ApiClient {
     
-    static let shared: ApiClient = ApiClient()
+    private let networkingService: NetworkingService
     
-    private init() {}
+    init(networkingService: NetworkingService = URLSessionNetworkingService()) {
+        self.networkingService = networkingService
+    }
     
     // simulated network call
     func getAvailableCurrencies() -> [Currency] {
@@ -40,20 +42,16 @@ final class ApiClient {
             return Fail(error: ApiClientError.failedToContructURL).eraseToAnyPublisher()
         }
         
-        return URLSession.shared.dataTaskPublisher(for: url)
-            .mapError { $0 as Error }
-            .flatMap { data, response -> AnyPublisher<Data, Error> in
-                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                    let errorResponse = String(data: data, encoding: .utf8) ?? "Unknown error"
-                    print("Error response: \(errorResponse)")
-                    return Fail(error: ApiClientError.failedToContructURL).eraseToAnyPublisher()
-                }
-                return Just(data).setFailureType(to: Error.self).eraseToAnyPublisher()
+        return networkingService
+            .fetchData(from: url)
+            .flatMap { data -> AnyPublisher<RateResponse, Error> in
+                Just(data)
+                    .decode(type: RateResponse.self, decoder: JSONDecoder())
+                    .mapError { $0 as Error }
+                    .eraseToAnyPublisher()
             }
-            .decode(type: RateResponse.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
-
     }
     
     enum ApiClientError: Error {

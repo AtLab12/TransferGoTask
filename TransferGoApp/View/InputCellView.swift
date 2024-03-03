@@ -63,6 +63,7 @@ struct InputCellView: View {
                     }
                 }
                 .tint(.black)
+                .accessibilityIdentifier(directionIdentifier == .from ? "SelectFromCurrency" : "SelectToCurrency")
             }
             
             TextField("Amount", text: $amount)

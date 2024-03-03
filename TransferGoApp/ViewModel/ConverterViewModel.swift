@@ -20,11 +20,12 @@ final class ConverterViewModel: ObservableObject {
     
     @Published public private(set) var rate: Double = 0.0
     
-    @Published var error: ConverterError?
-    @Published public private(set) var amountError: ConverterError?
+    @Published var error: ConverterError? = nil
+    @Published public private(set) var amountError: ConverterError? = nil
     
     private var lastCheck = ("0.0", "0.0")
     private let networkMonitor = NetworkMonitor()
+    private let apiClient: ApiClient
     
     public var rateLabel: String {
         "1 \(fromCurrency.acronym) = \(rate) \(toCurrency.acronym)"
@@ -32,7 +33,8 @@ final class ConverterViewModel: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     
-    init() {
+    init(apiClient: ApiClient = .init()) {
+        self.apiClient = apiClient
         self.fromCurrency = .init(acronym: "PLN", flag: UIImage(resource: .plImg), id: UUID(), sendingLimit: 20000, country: "Poland", fullName: "Polish zloty")
         self.toCurrency = .init(acronym: "UAH", flag: UIImage(resource: .uaImg), id: UUID(), sendingLimit: 50000, country: "Ukraine", fullName: "Hrivna")
         
@@ -77,7 +79,9 @@ final class ConverterViewModel: ObservableObject {
             .networkStatusPublisher
             .sink { isConnected in
                 if !isConnected {
-                    self.error = .init(title: "No network", subtitle: "Check your internet connection")
+                    DispatchQueue.main.async {
+                        self.error = .init(title: "No network", subtitle: "Check your internet connection")
+                    }
                 }
             }
             .store(in: &cancellables)
@@ -92,7 +96,7 @@ final class ConverterViewModel: ObservableObject {
     
     func updateRate(initiatedBy: CellDirectionIdentifier = .from) {
         if (fromAmount, toAmount) != lastCheck && (amountError == nil || initiatedBy == .to) {
-            ApiClient.shared.getRateCurrencies(
+            apiClient.getRateCurrencies(
                 from: initiatedBy == .from ? fromCurrency : toCurrency,
                 to: initiatedBy == .from ? toCurrency : fromCurrency,
                 amount: initiatedBy == .from ? fromAmount : toAmount

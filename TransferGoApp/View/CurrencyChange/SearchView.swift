@@ -23,6 +23,7 @@ struct SearchView: View {
     
     var body: some View {
         TextField("", text: $searchText)
+            .accessibilityIdentifier("SearchBar")
             .padding(.horizontal, Constants.textHoriznotalPadding)
             .font(.system(size: Constants.textFontSize))
             .focused($isTextFieldFocused)
