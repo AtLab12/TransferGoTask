@@ -9,15 +9,18 @@ import Foundation
 import UIKit
 import Combine
 
-@Observable
-final class ConverterViewModel {
+final class ConverterViewModel: ObservableObject {
     
-    public var fromAmount: String
-    public var fromCurrency: Currency
-    public var toAmount: String
-    public var toCurrency: Currency
-    public private(set) var rate: Double
-    public private(set) var error: Error?
+    @Published var fromAmount: String = "100.00"
+    @Published var fromCurrency: Currency
+    
+    @Published var toAmount: String = "0.0"
+    @Published var toCurrency: Currency
+    
+    @Published public private(set) var rate: Double = 0.0
+    @Published public private(set) var error: Error?
+    
+    private var lastCheck = ("0.0", "0.0")
     
     public var rateLabel: String {
         "1 \(fromCurrency.acronym) = \(rate) \(toCurrency.acronym)"
@@ -26,11 +29,24 @@ final class ConverterViewModel {
     private var cancellables = Set<AnyCancellable>()
     
     init() {
-        self.fromAmount = "100.00"
         self.fromCurrency = .init(acronym: "PLN", flag: UIImage(resource: .plImg), id: UUID(), sendingLimit: 20000, country: "Poland", fullName: "Polish zloty")
-        self.toAmount = "0.0"
         self.toCurrency = .init(acronym: "UAH", flag: UIImage(resource: .uaImg), id: UUID(), sendingLimit: 50000, country: "Ukraine", fullName: "Hrivna")
-        self.rate = 0.0
+        
+        $fromAmount
+            .debounce(for: .seconds(0.75), scheduler: RunLoop.main)
+            .removeDuplicates()
+            .sink { [weak self] _ in
+                self?.updateRate(initiatedBy: .from)
+            }
+            .store(in: &cancellables)
+        
+        $toAmount
+            .debounce(for: .seconds(0.75), scheduler: RunLoop.main)
+            .removeDuplicates()
+            .sink { [weak self] _ in
+                self?.updateRate(initiatedBy: .to)
+            }
+            .store(in: &cancellables)
     }
     
     func swapCurrencies() {
@@ -39,8 +55,13 @@ final class ConverterViewModel {
         updateRate()
     }
     
-    func updateRate() {
-        ApiClient.shared.getRateCurrencies(from: fromCurrency, to: toCurrency, amount: fromAmount)
+    func updateRate(initiatedBy: CellDirectionIdentifier = .from) {
+        if (fromAmount, toAmount) != lastCheck {
+            ApiClient.shared.getRateCurrencies(
+                from: initiatedBy == .from ? fromCurrency : toCurrency,
+                to: initiatedBy == .from ? toCurrency : fromCurrency,
+                amount: initiatedBy == .from ? fromAmount : toAmount
+            )
             .sink { completion in
                 switch completion {
                 case .finished:
@@ -50,10 +71,19 @@ final class ConverterViewModel {
                 }
             } receiveValue: { response in
                 DispatchQueue.main.async {
-                    self.rate = response.rate
-                    self.toAmount = String(response.toAmount)
+                    if response.from == self.fromCurrency.acronym {
+                        self.toAmount = String(response.toAmount)
+                        self.fromAmount = String(response.fromAmount)
+                        self.rate = response.rate
+                        self.lastCheck = (String(response.fromAmount), String(response.toAmount))
+                    } else {
+                        self.toAmount = String(response.fromAmount)
+                        self.fromAmount = String(response.toAmount)
+                        self.lastCheck = (String(response.toAmount), String(response.fromAmount))
+                    }
                 }
             }
             .store(in: &cancellables)
+        }
     }
 }

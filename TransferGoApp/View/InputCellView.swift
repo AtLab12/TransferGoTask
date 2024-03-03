@@ -72,6 +72,9 @@ struct InputCellView: View {
                 .multilineTextAlignment(.trailing)
                 .keyboardType(.decimalPad)
         }
+        .onChange(of: amount) { oldValue, newValue in
+            print(oldValue, " new ", newValue)
+        }
     }
 }
 

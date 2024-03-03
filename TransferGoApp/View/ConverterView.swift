@@ -25,7 +25,7 @@ struct ConverterView: View {
         static let rateTextSize = 12.0
     }
     
-    @Bindable var viewModel = ConverterViewModel()
+    @StateObject private var viewModel = ConverterViewModel()
     @State private var currencyChangeViewModel: CurrencyChangeViewModel? = nil
     
     var body: some View {
@@ -94,7 +94,7 @@ struct ConverterView: View {
         .task {
             viewModel.updateRate()
         }
-        .onChange(of: viewModel.fromAmount) {
+        .onChange(of: [viewModel.fromCurrency, viewModel.toCurrency]) {
             viewModel.updateRate()
         }
     }
