@@ -29,87 +29,98 @@ struct ConverterView: View {
     @State private var currencyChangeViewModel: CurrencyChangeViewModel? = nil
     
     var body: some View {
-        VStack {
-            ZStack{
-                RoundedRectangle(cornerRadius: Constants.cornerRadius)
-                    .foregroundStyle(Color.backgroundGray)
-                
-                VStack {
+        ZStack {
+            VStack {
+                ZStack{
                     RoundedRectangle(cornerRadius: Constants.cornerRadius)
-                        .frame(height: Constants.fieldHeight/2)
-                        .foregroundStyle(Color.white)
-                        .shadow(color: Color.shadow, radius: 5)
-                        .overlay {
-                            if viewModel.amountError != nil {
-                                RoundedRectangle(cornerRadius: Constants.cornerRadius)
-                                    .stroke(lineWidth: 2)
-                                    .foregroundStyle(Color.red)
-                            }
-                        }
+                        .foregroundStyle(Color.backgroundGray)
                     
-                    Spacer()
-                }
-                
-                if let amountError = viewModel.amountError {
                     VStack {
+                        RoundedRectangle(cornerRadius: Constants.cornerRadius)
+                            .frame(height: Constants.fieldHeight/2)
+                            .foregroundStyle(Color.white)
+                            .shadow(color: Color.shadow, radius: 5)
+                            .overlay {
+                                if viewModel.amountError != nil {
+                                    RoundedRectangle(cornerRadius: Constants.cornerRadius)
+                                        .stroke(lineWidth: 2)
+                                        .foregroundStyle(Color.alertRed)
+                                }
+                            }
+                        
+                        Spacer()
+                    }
+                    
+                    if let amountError = viewModel.amountError {
+                        VStack {
+                            
+                            Spacer()
+                            
+                            AmountAlert(alert: amountError)
+                                .offset(y: 40)
+                        }
+                    }
+                    
+                    VStack {
+                        InputCellView(
+                            directionIdentifier: .from,
+                            selectedCurrency: $viewModel.fromCurrency,
+                            amount: $viewModel.fromAmount,
+                            currencyChangeViewModel: $currencyChangeViewModel
+                        )
                         
                         Spacer()
                         
-                        AmountAlert(alert: amountError)
-                            .offset(y: 40)
+                        InputCellView(
+                            directionIdentifier: .to,
+                            selectedCurrency: $viewModel.toCurrency,
+                            amount: $viewModel.toAmount,
+                            currencyChangeViewModel: $currencyChangeViewModel
+                        )
                     }
-                }
-                
-                VStack {
-                    InputCellView(
-                        directionIdentifier: .from,
-                        selectedCurrency: $viewModel.fromCurrency,
-                        amount: $viewModel.fromAmount,
-                        currencyChangeViewModel: $currencyChangeViewModel
-                    )
+                    .padding(.horizontal, Constants.cellContentHorizntalPadding)
+                    .padding(.vertical, Constants.cellContentVerticalPadding)
                     
-                    Spacer()
-                    
-                    InputCellView(
-                        directionIdentifier: .to,
-                        selectedCurrency: $viewModel.toCurrency,
-                        amount: $viewModel.toAmount,
-                        currencyChangeViewModel: $currencyChangeViewModel
-                    )
-                }
-                .padding(.horizontal, Constants.cellContentHorizntalPadding)
-                .padding(.vertical, Constants.cellContentVerticalPadding)
-                
-                Button {
-                    withAnimation {
-                        viewModel.swapCurrencies()
+                    Button {
+                        withAnimation {
+                            viewModel.swapCurrencies()
+                        }
+                    } label: {
+                        Circle()
+                            .foregroundStyle(Color.blue)
+                            .frame(width: Constants.swapButtonSize)
+                            .overlay {
+                                Image(systemName: "arrow.up.arrow.down")
+                                    .font(.system(size: Constants.swapButtonFontSize, weight: .bold))
+                                    .foregroundStyle(Color.white)
+                            }
                     }
-                } label: {
-                    Circle()
-                        .foregroundStyle(Color.blue)
-                        .frame(width: Constants.swapButtonSize)
-                        .overlay {
-                            Image(systemName: "arrow.up.arrow.down")
-                                .font(.system(size: Constants.swapButtonFontSize, weight: .bold))
-                                .foregroundStyle(Color.white)
+                    .offset(x: -Constants.fieldWidth * 0.33)
+                    
+                    Text(viewModel.rateLabel)
+                        .font(.system(size: Constants.rateTextSize, weight: .semibold))
+                        .foregroundStyle(Color.white)
+                        .padding(.vertical, Constants.rateVerticalPadding)
+                        .padding(.horizontal, Constants.rateHorizontalPadding)
+                        .background {
+                            Capsule()
+                                .foregroundStyle(Color.black)
                         }
                 }
-                .offset(x: -Constants.fieldWidth * 0.33)
+                .frame(width: Constants.fieldWidth, height: Constants.fieldHeight)
+                .padding(.top, Constants.fieldTopPadding)
                 
-                Text(viewModel.rateLabel)
-                    .font(.system(size: Constants.rateTextSize, weight: .semibold))
-                    .foregroundStyle(Color.white)
-                    .padding(.vertical, Constants.rateVerticalPadding)
-                    .padding(.horizontal, Constants.rateHorizontalPadding)
-                    .background {
-                        Capsule()
-                            .foregroundStyle(Color.black)
-                    }
+                Spacer()
             }
-            .frame(width: Constants.fieldWidth, height: Constants.fieldHeight)
-            .padding(.top, Constants.fieldTopPadding)
             
-            Spacer()
+            if viewModel.error != nil {
+                VStack {
+                    TopError(error: $viewModel.error)
+                        .padding(.top, 30)
+                    
+                    Spacer()
+                }
+            }
         }
         .sheet(item: $currencyChangeViewModel) {
             CurrencyConverterView(

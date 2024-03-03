@@ -20,10 +20,11 @@ final class ConverterViewModel: ObservableObject {
     
     @Published public private(set) var rate: Double = 0.0
     
-    @Published public private(set) var error: ConverterError?
+    @Published var error: ConverterError?
     @Published public private(set) var amountError: ConverterError?
     
     private var lastCheck = ("0.0", "0.0")
+    private let networkMonitor = NetworkMonitor()
     
     public var rateLabel: String {
         "1 \(fromCurrency.acronym) = \(rate) \(toCurrency.acronym)"
@@ -69,6 +70,15 @@ final class ConverterViewModel: ObservableObject {
             .removeDuplicates()
             .sink { [weak self] _ in
                 self?.updateRate(initiatedBy: .to)
+            }
+            .store(in: &cancellables)
+        
+        networkMonitor
+            .networkStatusPublisher
+            .sink { isConnected in
+                if !isConnected {
+                    self.error = .init(title: "No network", subtitle: "Check your internet connection")
+                }
             }
             .store(in: &cancellables)
     }

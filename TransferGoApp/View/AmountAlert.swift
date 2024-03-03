@@ -12,24 +12,32 @@ struct AmountAlert: View {
     
     let alert: ConverterError
     
+    private enum Constants {
+        static let cornerRadius = 5.0
+        static let alertHeight = 32.0
+        static let contentSpacing = 5.0
+        static let titleSize = 13.0
+        static let iconSize = 15.0
+    }
+    
     var body: some View {
-        RoundedRectangle(cornerRadius: 5)
-            .frame(height: 32)
-            .foregroundStyle(Color.red.opacity(0.2))
+        RoundedRectangle(cornerRadius: Constants.cornerRadius)
+            .frame(height: Constants.alertHeight)
+            .foregroundStyle(Color.alertRed.opacity(0.2))
             .overlay {
-                HStack(spacing: 5) {
+                HStack(spacing: Constants.contentSpacing) {
                     Image(systemName: "info.circle")
-                        .font(.system(size: 15, weight: .semibold))
+                        .font(.system(size: Constants.iconSize, weight: .semibold))
                     
                     Text(alert.title)
-                        .font(.system(size: 13))
+                        .font(.system(size: Constants.titleSize))
                 }
-                .foregroundStyle(Color.red)
+                .foregroundStyle(Color.alertRed)
                 .padding(.horizontal)
             }
     }
 }
 
 #Preview {
-    AmountAlert(alert: .init(title: "Maximum sending amount: \(10000) " + ("PLN"), subtitle: ""))
+    AmountAlert(alert: .mockNoSubtitle)
 }

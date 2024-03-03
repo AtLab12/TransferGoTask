@@ -11,3 +11,12 @@ struct ConverterError: Error {
     let title: String
     let subtitle: String
 }
+
+#if DEBUG
+
+extension ConverterError {
+    static let mockNoSubtitle: Self = .init(title: "Maximum sending amount: \(20000) " + "PLN", subtitle: "")
+    static let mock: Self = .init(title: "No network", subtitle: "Check your internet connection")
+}
+
+#endif
