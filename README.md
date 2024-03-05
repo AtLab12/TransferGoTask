@@ -1,5 +1,4 @@
-# TransferGo Offline Recruitment Task - Mikolaj Z
-
+# TransferGo Offline Recruitment Task
 ## Overview
 
 This project is developed as part of the recruitment process for TransferGo. It implements 100% of the required business logic, including a fully functional currency converter and a search feature that leverages the Levenshtein distance algorithm.
